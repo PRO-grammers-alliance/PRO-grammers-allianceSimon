@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import co.edu.unbosque.model.persistence.Propiedades;
 
-public class Operaciones {
+public class Operaciones{
 	
 	public String crearSecuencia() {
 		Secuencia sec = new Secuencia();
