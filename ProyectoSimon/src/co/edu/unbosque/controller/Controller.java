@@ -15,10 +15,10 @@ public class Controller implements ActionListener {
 	public Controller() {
 		ventanaBienvenida = new VentanaBienvenida();
 		ventanaJuego = new VentanaJuego();
-		oyentes();
+		asignarOyentes();
 	}
 
-	public void oyentes() {
+	public void asignarOyentes() {
 		ventanaBienvenida.getPi().getBtingreso().addActionListener(this);
 		ventanaJuego.getpC().getBtEmpezar().addActionListener(this);
 	}
