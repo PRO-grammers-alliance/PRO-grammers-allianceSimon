@@ -36,6 +36,7 @@ public class Controller implements ActionListener {
 		}else if(e.getActionCommand().equals("empezar")) {
 			//Pasa por parametro la secuencia en un string de numeros y los escribe en el archivo de propiedades
 			op.gestionarPropiedades(op.crearSecuencia());
+			System.out.println(op.verSecuencia(0) + " " + op.verSecuencia(1) + " " + op.verSecuencia(2) + " " + op.verSecuencia(3));
 			//Este como se debe hacer el cambio de panels dependiendo del numero generado
 			//Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
 			ventanaJuego.remove(ventanaJuego.getpS());
