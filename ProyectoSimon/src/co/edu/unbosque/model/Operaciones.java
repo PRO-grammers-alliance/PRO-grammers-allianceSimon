@@ -17,4 +17,11 @@ public class Operaciones{
 		prop.escribirPropiedades(numeros);
 	}
 	
+	//Método que permite ver el número de la secuencia según la posición que se pase por parámetro
+	public int verSecuencia(int posicion) {
+		Propiedades prop = new Propiedades();
+		String secuencia = prop.leerPropiedades("secuencia");
+		String numero = String.valueOf(secuencia.charAt(posicion));
+		return Integer.parseInt(numero);
+	}
 }

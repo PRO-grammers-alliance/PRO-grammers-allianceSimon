@@ -19,11 +19,7 @@ public class Secuencia {
 	protected String devolverArreglo() {
 		String texto="";
 		for (int i = 0; i < getSecuencia().length; i++) {
-			if(i==getSecuencia().length-1) {
-				texto += getSecuencia()[i];
-			}else {
-				texto += getSecuencia()[i] + " ";
-			}
+			texto += getSecuencia()[i];
 		}
 		return texto;
 	}
