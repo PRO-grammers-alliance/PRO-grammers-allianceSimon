@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 public class VentanaJuego extends JFrame{
 
 	private PanelNumeros pN;
-	private PanelPuntaje pP;
 	private PanelComprobar pC;
 	private PanelSimon pS;
 	private PanelVerdeE pVE;
@@ -32,9 +31,6 @@ public class VentanaJuego extends JFrame{
 	public void inicializarComponentes() {
 		pN = new PanelNumeros();
 		getContentPane().add(pN, BorderLayout.NORTH);
-		
-		pP = new PanelPuntaje();
-		getContentPane().add(pP, BorderLayout.WEST);
 		
 		pC = new PanelComprobar();
 		getContentPane().add(pC, BorderLayout.SOUTH);
@@ -65,14 +61,6 @@ public class VentanaJuego extends JFrame{
 
 	public void setpN(PanelNumeros pN) {
 		this.pN = pN;
-	}
-
-	public PanelPuntaje getpP() {
-		return pP;
-	}
-
-	public void setpP(PanelPuntaje pP) {
-		this.pP = pP;
 	}
 
 	public PanelSimon getpS() {

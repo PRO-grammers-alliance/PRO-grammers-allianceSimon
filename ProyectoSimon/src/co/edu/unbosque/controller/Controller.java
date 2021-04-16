@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import co.edu.unbosque.model.Operaciones;
-import co.edu.unbosque.model.Secuencia;
 import co.edu.unbosque.view.VentanaBienvenida;
 import co.edu.unbosque.view.VentanaJuego;
 
@@ -13,12 +12,10 @@ public class Controller implements ActionListener {
 	private VentanaBienvenida ventanaBienvenida;
 	private VentanaJuego ventanaJuego;
 	private Operaciones op;
-	private Secuencia s;
 
 	public Controller() {
 		ventanaBienvenida = new VentanaBienvenida();
 		ventanaJuego = new VentanaJuego();
-		s = new Secuencia();
 		op = new Operaciones();
 		asignarOyentes();
 	}
@@ -33,16 +30,122 @@ public class Controller implements ActionListener {
 		if (e.getActionCommand().equals("jugar")) {
 			ventanaBienvenida.setVisible(false);
 			ventanaJuego.setVisible(true);
-		}else if(e.getActionCommand().equals("empezar")) {
-			//Pasa por parametro la secuencia en un string de numeros y los escribe en el archivo de propiedades
+		} else if (e.getActionCommand().equals("empezar")) {
+			// Pasa por parametro la secuencia en un string de numeros y los escribe en el
+			// archivo de propiedades
 			op.gestionarPropiedades(op.crearSecuencia());
-			System.out.println(op.verSecuencia(0) + " " + op.verSecuencia(1) + " " + op.verSecuencia(2) + " " + op.verSecuencia(3));
-			//Este como se debe hacer el cambio de panels dependiendo del numero generado
-			//Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
-			ventanaJuego.remove(ventanaJuego.getpS());
-			ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
-			ventanaJuego.getpVE().setVisible(true);		
-			ventanaJuego.repaint();
+			// Este como se debe hacer el cambio de panels dependiendo del numero generado
+			// Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
+			int i = 0;
+			while (i < 4) {
+				if (op.verSecuencia(0) == 1) {
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
+					ventanaJuego.getpVE().setVisible(true);
+				} else if (op.verSecuencia(0) == 2) {
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
+					ventanaJuego.getpRE().setVisible(true);
+				} else if (op.verSecuencia(0) == 3) {
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
+					ventanaJuego.getpAE().setVisible(true);
+				} else if (op.verSecuencia(0) == 4) {
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
+					ventanaJuego.getpAzE().setVisible(true);
+				}else if(op.verSecuencia(1) == 1) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
+					ventanaJuego.getpVE().setVisible(true);
+				}else if(op.verSecuencia(1) == 2) {
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
+					ventanaJuego.getpRE().setVisible(true);
+				}else if(op.verSecuencia(1) == 3) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
+					ventanaJuego.getpAE().setVisible(true);
+				}else if(op.verSecuencia(1) == 4) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
+					ventanaJuego.getpAzE().setVisible(true);
+				}else if(op.verSecuencia(2) == 1) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
+					ventanaJuego.getpVE().setVisible(true);
+				}else if(op.verSecuencia(2) == 2) {
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
+					ventanaJuego.getpRE().setVisible(true);
+				}else if(op.verSecuencia(2) == 3) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
+					ventanaJuego.getpAE().setVisible(true);
+				}else if(op.verSecuencia(2) == 4) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
+					ventanaJuego.getpAzE().setVisible(true);
+				}else if(op.verSecuencia(3) == 1) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
+					ventanaJuego.getpVE().setVisible(true);
+				}else if(op.verSecuencia(3) == 2) {
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
+					ventanaJuego.getpRE().setVisible(true);
+				}else if(op.verSecuencia(3) == 3) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
+					ventanaJuego.getpAE().setVisible(true);
+				}else if(op.verSecuencia(3) == 4) {
+					ventanaJuego.remove(ventanaJuego.getpRE());
+					ventanaJuego.remove(ventanaJuego.getpAE());
+					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
+					ventanaJuego.getpAzE().setVisible(true);
+				}
+				ventanaJuego.repaint();
+				i++;
+			}
+			
 		}
 	}
 }
