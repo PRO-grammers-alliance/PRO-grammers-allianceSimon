@@ -32,16 +32,24 @@ public class PanelNumeros extends JPanel{
 		texto.setFont(new Font("Times New Roman", Font.CENTER_BASELINE, 25));
 		add(texto);
 		
-		num1 = new JButton();
+		num1 = new JButton("1");
+		num1.setActionCommand("1");
+		num1.setBackground(new Color(29,175,35));
 		add(num1);
 		
-		num2 = new JButton();
+		num2 = new JButton("2");
+		num2.setActionCommand("2");
+		num2.setBackground(new Color(252,0,0));
 		add(num2);
 		
-		num3 = new JButton();
+		num3 = new JButton("3");
+		num3.setActionCommand("3");
+		num3.setBackground(new Color(244,252,0));
 		add(num3);
 		
-		num4 = new JButton();
+		num4 = new JButton("4");
+		num4.setActionCommand("4");
+		num4.setBackground(new Color(24,101,255));
 		add(num4);
 	}
 
