@@ -3,7 +3,6 @@ package co.edu.unbosque.controller;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import co.edu.unbosque.view.VentanaBienvenida;
 import co.edu.unbosque.view.VentanaJuego;
 
@@ -33,7 +32,7 @@ public class Controller implements ActionListener {
 			//Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
 			ventanaJuego.remove(ventanaJuego.getpS());
 			ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
-			ventanaJuego.getpVE().setVisible(true);
+			ventanaJuego.getpVE().setVisible(true);		
 			ventanaJuego.repaint();
 		}
 	}
