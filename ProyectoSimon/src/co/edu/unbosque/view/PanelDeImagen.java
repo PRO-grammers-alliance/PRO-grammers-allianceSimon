@@ -1,4 +1,4 @@
-package view;
+package co.edu.unbosque.view;
 
 import java.awt.Dimension;
 import java.awt.Graphics;

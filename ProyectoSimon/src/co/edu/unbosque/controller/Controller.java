@@ -10,8 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import view.VentanaBienvenida;
-import view.VentanaJuego;
+import co.edu.unbosque.view.VentanaBienvenida;
+import co.edu.unbosque.view.VentanaJuego;
 
 public class Controller implements ActionListener {
 
