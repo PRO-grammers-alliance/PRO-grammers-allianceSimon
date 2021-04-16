@@ -9,32 +9,32 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
-public class PanelSimon extends JPanel{
+public class PanelVerdeE extends JPanel{
 	
-	private JLabel color1;
+	private JLabel colorCambiar;
 	private JLabel color2;
 	private JLabel color3;
 	private JLabel color4;
 	
-	public PanelSimon(){
+	public PanelVerdeE() {
 		setLayout(new GridLayout(2,2));
 		setBackground(new Color(108,102,97));
 		setBorder(new TitledBorder("SIMON"));
-		setVisible(true);
+		setVisible(false);
 		
 		inicializarComponentes();
 	}
 	
 	public void inicializarComponentes() {
-		//imagenes con los colores apagados
-		Icon imgVA,imgRA,imgAA,imgAzA;
-		imgVA = new ImageIcon(getClass().getResource("/imagen/verdeApagado.jpg"));	
+		Icon imgVE,imgRA,imgAA,imgAzA;
+		imgVE = new ImageIcon(getClass().getResource("/imagen/verdeEncendido.jpg"));
 		imgRA = new ImageIcon(getClass().getResource("/imagen/rojoApagado.jpg"));
-		imgAA = new ImageIcon(getClass().getResource("/imagen/amarilloApagado.jpg"));	
+		imgAA = new ImageIcon(getClass().getResource("/imagen/amarilloApagado.jpg"));
 		imgAzA = new ImageIcon(getClass().getResource("/imagen/azulApagado.jpg"));
 		
-		color1 = new JLabel(imgVA);
-		add(color1);
+		//se pone el verde encendido
+		colorCambiar = new JLabel(imgVE);
+		add(colorCambiar);
 		
 		color2 = new JLabel(imgRA);
 		add(color2);
@@ -46,12 +46,12 @@ public class PanelSimon extends JPanel{
 		add(color4);
 	}
 
-	public JLabel getColor1() {
-		return color1;
+	public JLabel getColorCambiar() {
+		return colorCambiar;
 	}
 
-	public void setColor1(JLabel color1) {
-		this.color1 = color1;
+	public void setColorCambiar(JLabel colorCambiar) {
+		this.colorCambiar = colorCambiar;
 	}
 
 	public JLabel getColor2() {
