@@ -16,7 +16,7 @@ public class VentanaJuego extends JFrame{
 	private PanelAzulE pAzE;
 	
 	public VentanaJuego() {
-		setTitle("Ventana de Bienvenida");
+		setTitle("Simon");
 		setPreferredSize(new Dimension(640, 482));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout());//poner botones y paneles de forma automatica
