@@ -3,6 +3,7 @@ package co.edu.unbosque.view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class VentanaJuego extends JFrame{
 
@@ -39,11 +40,8 @@ public class VentanaJuego extends JFrame{
 		getContentPane().add(pS, BorderLayout.CENTER);
 		
 		pVE = new PanelVerdeE();
-		
 		pRE = new PanelRojoE();
-		
 		pAE = new PanelAmarilloE();
-		
 		pAzE = new PanelAzulE();
 	}
 
