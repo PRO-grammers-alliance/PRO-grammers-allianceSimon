@@ -10,10 +10,6 @@ public class VentanaJuego extends JFrame{
 	private PanelNumeros pN;
 	private PanelComprobar pC;
 	private PanelSimon pS;
-	private PanelVerdeE pVE;
-	private PanelRojoE pRE;
-	private PanelAmarilloE pAE;
-	private PanelAzulE pAzE;
 	
 	public VentanaJuego() {
 		setTitle("Simon");
@@ -39,10 +35,6 @@ public class VentanaJuego extends JFrame{
 		pS = new PanelSimon();
 		getContentPane().add(pS, BorderLayout.CENTER);
 		
-		pVE = new PanelVerdeE();
-		pRE = new PanelRojoE();
-		pAE = new PanelAmarilloE();
-		pAzE = new PanelAzulE();
 	}
 
 	public PanelComprobar getpC() {
@@ -69,35 +61,4 @@ public class VentanaJuego extends JFrame{
 		this.pS = pS;
 	}
 
-	public PanelVerdeE getpVE() {
-		return pVE;
-	}
-
-	public void setpVE(PanelVerdeE pVE) {
-		this.pVE = pVE;
-	}
-
-	public PanelRojoE getpRE() {
-		return pRE;
-	}
-
-	public void setpRE(PanelRojoE pRE) {
-		this.pRE = pRE;
-	}
-
-	public PanelAmarilloE getpAE() {
-		return pAE;
-	}
-
-	public void setpAE(PanelAmarilloE pAE) {
-		this.pAE = pAE;
-	}
-
-	public PanelAzulE getpAzE() {
-		return pAzE;
-	}
-
-	public void setpAzE(PanelAzulE pAzE) {
-		this.pAzE = pAzE;
-	}
 }

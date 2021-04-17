@@ -1,9 +1,8 @@
 package co.edu.unbosque.controller;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import co.edu.unbosque.model.Operaciones;
 import co.edu.unbosque.view.VentanaBienvenida;
 import co.edu.unbosque.view.VentanaJuego;
@@ -24,6 +23,10 @@ public class Controller implements ActionListener {
 	public void asignarOyentes() {
 		ventanaBienvenida.getPi().getBtingreso().addActionListener(this);
 		ventanaJuego.getpC().getBtEmpezar().addActionListener(this);
+		ventanaJuego.getpS().getColorV().addActionListener(this);
+		ventanaJuego.getpS().getColorR().addActionListener(this);
+		ventanaJuego.getpS().getColorA().addActionListener(this);
+		ventanaJuego.getpS().getColorAz().addActionListener(this);
 	}
 
 	@Override
@@ -32,68 +35,35 @@ public class Controller implements ActionListener {
 			ventanaBienvenida.setVisible(false);
 			ventanaJuego.setVisible(true);
 		} else if (e.getActionCommand().equals("empezar")) {
-			// Pasa por parametro la secuencia en un string de numeros y los escribe en el
-			// archivo de propiedades
+			// Pasa por parametro la secuencia en un string de numeros y los escribe en el archivo de propiedades
 			op.gestionarPropiedades(op.crearSecuencia());
-			// Este como se debe hacer el cambio de panels dependiendo del numero generado
-			// Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
-			ventanaJuego.getpS().setVisible(false);
-			for(int i = 0; i<4;i++) {
-				if (op.verSecuencia(i) == 1) {
-					ventanaJuego.getpRE().setVisible(false);
-					ventanaJuego.getpAE().setVisible(false);
-					ventanaJuego.getpAzE().setVisible(false);
-					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
-					ventanaJuego.getpVE().setVisible(true);
-					System.out.println(i+"...1");
-					try {
-						Thread.sleep(700);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				} else if (op.verSecuencia(i) == 2) {
-					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
-					ventanaJuego.getpRE().setVisible(true);
-					ventanaJuego.getpVE().setVisible(false);
-					ventanaJuego.getpAE().setVisible(false);
-					ventanaJuego.getpAzE().setVisible(false);
-					System.out.println(i+"...2");
-					try {
-						Thread.sleep(700);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				} else if (op.verSecuencia(i) == 3) {
-					ventanaJuego.getpRE().setVisible(false);
-					ventanaJuego.getpVE().setVisible(false);
-					ventanaJuego.getpAzE().setVisible(false);
-					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
-					ventanaJuego.getpAE().setVisible(true);
-					System.out.println(i+"...3");
-					try {
-						Thread.sleep(700);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				} else if (op.verSecuencia(i) == 4) {
-					ventanaJuego.getpRE().setVisible(false);
-					ventanaJuego.getpAE().setVisible(false);
-					ventanaJuego.getpVE().setVisible(false);
-					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
-					ventanaJuego.getpAzE().setVisible(true);
-					System.out.println(i+"...4");
-					try {
-						Thread.sleep(700);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+			// Escribe en la parte superior los números generados
+			for (int i = 0; i < 4; i++) {
+				if (i==0) {
+					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
+				} else if (i==1) {
+					ventanaJuego.getpN().getNum2().setText(""+op.verSecuencia(i));
+				} else if (i==2) {
+					ventanaJuego.getpN().getNum3().setText(""+op.verSecuencia(i));
+				} else if (i==3) {
+					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));		
 				}
-				
 			}
+			//Activa los botones para seguir la secuencia
+			ventanaJuego.getpS().getColorV().setEnabled(true);
+			ventanaJuego.getpS().getColorR().setEnabled(true);
+			ventanaJuego.getpS().getColorA().setEnabled(true);
+			ventanaJuego.getpS().getColorAz().setEnabled(true);
+			
+			
+
+		} else if (e.getActionCommand().equals("verde")) {
+			
+		} else if (e.getActionCommand().equals("rojo")) {
+			
+		} else if (e.getActionCommand().equals("amarillo")) {
+			
+		} else if (e.getActionCommand().equals("azul")) {
 			
 		}
 	}

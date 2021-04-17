@@ -5,16 +5,16 @@ import java.awt.GridLayout;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 public class PanelSimon extends JPanel{
 	
-	private JLabel color1;
-	private JLabel color2;
-	private JLabel color3;
-	private JLabel color4;
+	private JButton colorV;
+	private JButton colorR;
+	private JButton colorA;
+	private JButton colorAz;
 	
 	public PanelSimon(){
 		setLayout(new GridLayout(2,2));
@@ -26,55 +26,75 @@ public class PanelSimon extends JPanel{
 	}
 	
 	public void inicializarComponentes() {
-		//imagenes con los colores apagados
-		Icon imgVA,imgRA,imgAA,imgAzA;
+		Icon imgVA,imgRA,imgAA,imgAzA,imgVE,imgRE,imgAE,imgAzE;
 		imgVA = new ImageIcon(getClass().getResource("/imagen/verdeApagado.jpg"));	
 		imgRA = new ImageIcon(getClass().getResource("/imagen/rojoApagado.jpg"));
 		imgAA = new ImageIcon(getClass().getResource("/imagen/amarilloApagado.jpg"));	
 		imgAzA = new ImageIcon(getClass().getResource("/imagen/azulApagado.jpg"));
+		imgVE = new ImageIcon(getClass().getResource("/imagen/verdeEncendido.jpg"));
+		imgRE = new ImageIcon(getClass().getResource("/imagen/rojoEncendido.jpg"));
+		imgAE = new ImageIcon(getClass().getResource("/imagen/amarilloEncendido.jpg"));
+		imgAzE = new ImageIcon(getClass().getResource("/imagen/azulEncendido.jpg"));
 		
-		color1 = new JLabel(imgVA);
-		add(color1);
+		colorV = new JButton();
+		colorV.setIcon(imgVE);
+		colorV.setDisabledIcon(imgVA);
+		colorV.setEnabled(false);
+		colorV.setActionCommand("verde");
+		add(colorV);
 		
-		color2 = new JLabel(imgRA);
-		add(color2);
+		colorR = new JButton();
+		colorR.setIcon(imgRE);
+		colorR.setDisabledIcon(imgRA);
+		colorR.setEnabled(false);
+		colorR.setActionCommand("rojo");
+		add(colorR);
 		
-		color3 = new JLabel(imgAA);
-		add(color3);
+		colorA = new JButton();
+		colorA.setIcon(imgAE);
+		colorA.setDisabledIcon(imgAA);
+		colorA.setEnabled(false);
+		colorA.setActionCommand("amarillo");
+		add(colorA);
 		
-		color4 = new JLabel(imgAzA);
-		add(color4);
+		colorAz = new JButton();
+		colorAz.setIcon(imgAzE);
+		colorAz.setDisabledIcon(imgAzA);
+		colorAz.setEnabled(false);
+		colorAz.setActionCommand("azul");
+		add(colorAz);
 	}
 
-	public JLabel getColor1() {
-		return color1;
+	public JButton getColorV() {
+		return colorV;
 	}
 
-	public void setColor1(JLabel color1) {
-		this.color1 = color1;
+	public void setColorV(JButton colorV) {
+		this.colorV = colorV;
 	}
 
-	public JLabel getColor2() {
-		return color2;
+	public JButton getColorR() {
+		return colorR;
 	}
 
-	public void setColor2(JLabel color2) {
-		this.color2 = color2;
+	public void setColorR(JButton colorR) {
+		this.colorR = colorR;
 	}
 
-	public JLabel getColor3() {
-		return color3;
+	public JButton getColorA() {
+		return colorA;
 	}
 
-	public void setColor3(JLabel color3) {
-		this.color3 = color3;
+	public void setColorA(JButton colorA) {
+		this.colorA = colorA;
 	}
 
-	public JLabel getColor4() {
-		return color4;
+	public JButton getColorAz() {
+		return colorAz;
 	}
 
-	public void setColor4(JLabel color4) {
-		this.color4 = color4;
+	public void setColorAz(JButton colorAz) {
+		this.colorAz = colorAz;
 	}
+
 }
