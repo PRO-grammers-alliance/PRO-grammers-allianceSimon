@@ -36,114 +36,125 @@ public class Controller implements ActionListener {
 			op.gestionarPropiedades(op.crearSecuencia());
 			// Este como se debe hacer el cambio de panels dependiendo del numero generado
 			// Si 1 se pone pVE, 2 se pone pRE,3 se pone pAE y 4 pAzE
-			int i = 0;
-			while (i < 4) {
+			for(int i = 0; i<4;i++) {
 				if (op.verSecuencia(0) == 1) {
-					ventanaJuego.remove(ventanaJuego.getpS());
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpS().setVisible(false);
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
 					ventanaJuego.getpVE().setVisible(true);
+					ventanaJuego.repaint();
 				} else if (op.verSecuencia(0) == 2) {
-					ventanaJuego.remove(ventanaJuego.getpS());
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpS().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
 					ventanaJuego.getpRE().setVisible(true);
+					ventanaJuego.repaint();
 				} else if (op.verSecuencia(0) == 3) {
-					ventanaJuego.remove(ventanaJuego.getpS());
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpS().setVisible(false);
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
 					ventanaJuego.getpAE().setVisible(true);
+					ventanaJuego.repaint();
 				} else if (op.verSecuencia(0) == 4) {
-					ventanaJuego.remove(ventanaJuego.getpS());
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.getpS().setVisible(false);
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
 					ventanaJuego.getpAzE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(1) == 1) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
-					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
 					ventanaJuego.getpVE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(1) == 2) {
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
 					ventanaJuego.getpRE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(1) == 3) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
 					ventanaJuego.getpAE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(1) == 4) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
 					ventanaJuego.getpAzE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(2) == 1) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
-					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
 					ventanaJuego.getpVE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(2) == 2) {
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
 					ventanaJuego.getpRE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(2) == 3) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpS().setVisible(false);
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
 					ventanaJuego.getpAE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(2) == 4) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
 					ventanaJuego.getpAzE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(3) == 1) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
-					ventanaJuego.remove(ventanaJuego.getpS());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpVE(), BorderLayout.CENTER);
 					ventanaJuego.getpVE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(3) == 2) {
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpRE(), BorderLayout.CENTER);
 					ventanaJuego.getpRE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(3) == 3) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
-					ventanaJuego.remove(ventanaJuego.getpAzE());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
+					ventanaJuego.getpAzE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAE(), BorderLayout.CENTER);
 					ventanaJuego.getpAE().setVisible(true);
+					ventanaJuego.repaint();
 				}else if(op.verSecuencia(3) == 4) {
-					ventanaJuego.remove(ventanaJuego.getpRE());
-					ventanaJuego.remove(ventanaJuego.getpAE());
-					ventanaJuego.remove(ventanaJuego.getpVE());
+					ventanaJuego.getpRE().setVisible(false);
+					ventanaJuego.getpAE().setVisible(false);
+					ventanaJuego.getpVE().setVisible(false);
 					ventanaJuego.add(ventanaJuego.getpAzE(), BorderLayout.CENTER);
 					ventanaJuego.getpAzE().setVisible(true);
+					ventanaJuego.repaint();
 				}
-				ventanaJuego.repaint();
-				i++;
 			}
 			
 		}
