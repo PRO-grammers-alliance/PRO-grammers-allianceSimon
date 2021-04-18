@@ -9,9 +9,10 @@ public class Propiedades {
 	private Properties prop = new Properties();
 	private String archivoprop = ".\\Data\\archivo.properties";
 	
-	public int escribirPropiedades(String numeros) {
+	public int escribirPropiedades() {
 		try {
-			prop.setProperty("secuencia", numeros);
+			prop.setProperty("nombreJuego", "Simon");
+			prop.setProperty("secuencia", "4");
 			prop.store(new FileOutputStream(archivoprop), null);
 		} catch (IOException ex) {
 			return -1;

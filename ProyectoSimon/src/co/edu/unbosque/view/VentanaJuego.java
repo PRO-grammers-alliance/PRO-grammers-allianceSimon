@@ -12,7 +12,7 @@ public class VentanaJuego extends JFrame{
 	private PanelSimon pS;
 	
 	public VentanaJuego() {
-		setTitle("Simon");
+		setTitle("");
 		setPreferredSize(new Dimension(640, 482));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(new BorderLayout());//poner botones y paneles de forma automatica

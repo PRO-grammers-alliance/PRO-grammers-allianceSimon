@@ -34,9 +34,11 @@ public class Controller implements ActionListener {
 		if (e.getActionCommand().equals("jugar")) {
 			ventanaBienvenida.setVisible(false);
 			ventanaJuego.setVisible(true);
+			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 		} else if (e.getActionCommand().equals("empezar")) {
-			// Pasa por parametro la secuencia en un string de numeros y los escribe en el archivo de propiedades
-			op.gestionarPropiedades(op.crearSecuencia());
+			// Crea la secuencia de numeros y la guarda en el txt
+			op.gestionarPropiedades();
+			op.crearSecuencia();
 			// Escribe en la parte superior los números generados
 			for (int i = 0; i < 4; i++) {
 				if (i==0) {
@@ -46,7 +48,7 @@ public class Controller implements ActionListener {
 				} else if (i==2) {
 					ventanaJuego.getpN().getNum3().setText(""+op.verSecuencia(i));
 				} else if (i==3) {
-					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));		
+					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));
 				}
 			}
 			//Activa los botones para seguir la secuencia
