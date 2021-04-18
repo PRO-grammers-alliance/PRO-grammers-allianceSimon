@@ -1,11 +1,15 @@
 package co.edu.unbosque.model;
 
+import co.edu.unbosque.model.persistence.Propiedades;
+
 public class Secuencia {
 
 	private String secuencia[];
-	
+	private Propiedades prop;
 	public Secuencia() {
-		secuencia = new String[4];
+		prop = new Propiedades();
+		int tam = Integer.parseInt(prop.leerPropiedades("secuencia"));
+		secuencia = new String[tam];
 	}
 	
 	//Método que genera y guarda un número entero random entre 1 y 4 por cada posición del Arreglo 
