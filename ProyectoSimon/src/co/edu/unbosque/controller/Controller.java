@@ -3,9 +3,12 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+<<<<<<< HEAD
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+=======
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
 
 import co.edu.unbosque.view.VentanaResultado;
 import co.edu.unbosque.model.Juego;
@@ -46,28 +49,63 @@ public class Controller implements ActionListener {
 			ventanaBienvenida.setVisible(false);
 			ventana_r.mostrarInfo("Bienvenido a SIMON \nEl juego consiste en repetir la secuencia de numeros\nque se le mostrara, cuando presione el boton de comenzar,\ntiene solo un intento si repilica correctamente la secuencia ganara.\nBuena suerte!!", "informativo");
 			ventanaJuego.setVisible(true);
-			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 		} else if (e.getActionCommand().equals("empezar")) {
 			// Crea la secuencia de numeros y la guarda en el txt
 			op.gestionarPropiedades();
+			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 			op.crearSecuencia();
+<<<<<<< HEAD
 			ventanaJuego.getpC().getBtEmpezar().setVisible(false);
 			
 			numero_u = new String[Integer.parseInt(op.verPropiedades("secuencia"))];
+=======
+
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
 			for (int i = 0; i < Integer.parseInt(op.verPropiedades("secuencia")); i++) {
 				if (i==0) {
 					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
+					
+					
+					System.out.println(op.verSecuencia(i));
+					
 				} else if (i==1) {
 					ventanaJuego.getpN().getNum2().setText(""+op.verSecuencia(i));
+					
+					System.out.println(op.verSecuencia(i));
+					
 				} else if (i==2) {
 					ventanaJuego.getpN().getNum3().setText(""+op.verSecuencia(i));
+					System.out.println(op.verSecuencia(i));
+					
 				} else if (i==3) {
 					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));
+<<<<<<< HEAD
 				}	
+=======
+					
+					System.out.println(op.verSecuencia(i));
+					
+				}
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
 			}
+<<<<<<< HEAD
 			
 			borrar();
 
+=======
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}finally {
+				ventanaJuego.getpN().getNum1().setText("");
+				ventanaJuego.getpN().getNum2().setText("");
+				ventanaJuego.getpN().getNum3().setText("");
+				ventanaJuego.getpN().getNum4().setText("");
+			}
+			
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
 			// Activa los botones para seguir la secuencia
 			ventanaJuego.getpS().getColorV().setEnabled(true);
 			ventanaJuego.getpS().getColorV().setIcon(ventanaJuego.getpS().getUno1());
