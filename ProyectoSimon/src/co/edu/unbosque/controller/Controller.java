@@ -2,6 +2,8 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import co.edu.unbosque.model.Operaciones;
 import co.edu.unbosque.view.VentanaBienvenida;
@@ -39,34 +41,52 @@ public class Controller implements ActionListener {
 			// Crea la secuencia de numeros y la guarda en el txt
 			op.gestionarPropiedades();
 			op.crearSecuencia();
-			// Escribe en la parte superior los números generados
-			for (int i = 0; i < 4; i++) {
-				if (i==0) {
-					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
-				} else if (i==1) {
-					ventanaJuego.getpN().getNum2().setText(""+op.verSecuencia(i));
-				} else if (i==2) {
-					ventanaJuego.getpN().getNum3().setText(""+op.verSecuencia(i));
-				} else if (i==3) {
-					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));
+
+			// Clase Timer() que se usa para una secuencia repetiva en determinado tiempo
+			// En este caso se usa para mostrar cada numero y luego quitarlo
+			Timer timer = new Timer();
+			// Indica la tarea a realizar en determinado tiempo
+			TimerTask tarea = new TimerTask() {
+				// metodo que se crea automaticamente al crear TimerTask
+				public void run() {
+					ventanaJuego.getpN().getNum1().setText("" + op.verSecuencia(0));
+					ventanaJuego.getpN().getNum2().setText("" + op.verSecuencia(1));
+					ventanaJuego.getpN().getNum3().setText("" + op.verSecuencia(2));
+					ventanaJuego.getpN().getNum4().setText("" + op.verSecuencia(3));
 				}
+			};
+			TimerTask tarea2 = new TimerTask() {
+				public void run() {
+					ventanaJuego.getpN().getNum1().setText("");
+					ventanaJuego.getpN().getNum2().setText("");
+					ventanaJuego.getpN().getNum3().setText("");
+					ventanaJuego.getpN().getNum4().setText("");
+				}
+			};
+			// Escribe en la parte superior los números generados
+			int i = 0;
+			while(i <= 1) {
+				if(i == 0) {
+					timer.scheduleAtFixedRate(tarea, 1000, 3000);
+				}else if(i == 1) {
+					timer.scheduleAtFixedRate(tarea2, 2000, 3000);
+				}
+				i++;
 			}
-			//Activa los botones para seguir la secuencia
+			// Activa los botones para seguir la secuencia
 			ventanaJuego.getpS().getColorV().setEnabled(true);
 			ventanaJuego.getpS().getColorR().setEnabled(true);
 			ventanaJuego.getpS().getColorA().setEnabled(true);
 			ventanaJuego.getpS().getColorAz().setEnabled(true);
-			
-			
 
 		} else if (e.getActionCommand().equals("verde")) {
-			
+
 		} else if (e.getActionCommand().equals("rojo")) {
-			
+
 		} else if (e.getActionCommand().equals("amarillo")) {
-			
+
 		} else if (e.getActionCommand().equals("azul")) {
-			
+
 		}
 	}
 }
