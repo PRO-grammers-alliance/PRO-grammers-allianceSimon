@@ -35,13 +35,13 @@ public class Controller implements ActionListener {
 		if (e.getActionCommand().equals("jugar")) {
 			ventanaBienvenida.setVisible(false);
 			ventanaJuego.setVisible(true);
-			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 		} else if (e.getActionCommand().equals("empezar")) {
 			// Crea la secuencia de numeros y la guarda en el txt
 			op.gestionarPropiedades();
+			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 			op.crearSecuencia();
 
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < Integer.parseInt(op.verPropiedades("secuencia")); i++) {
 				if (i==0) {
 					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
 				} else if (i==1) {
