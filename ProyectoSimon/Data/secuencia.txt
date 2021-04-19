@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 3232
+=======
+<<<<<<< HEAD
+3344
+=======
+2121
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
+>>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
