@@ -1,5 +1,6 @@
 package co.edu.unbosque.controller;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Timer;
@@ -55,12 +56,16 @@ public class Controller implements ActionListener {
 			}
 			// Activa los botones para seguir la secuencia
 			ventanaJuego.getpS().getColorV().setEnabled(true);
+			ventanaJuego.getpS().getColorV().setBackground(new Color(59,230,0));
 			ventanaJuego.getpS().getColorR().setEnabled(true);
+			ventanaJuego.getpS().getColorR().setBackground(new Color(255,0,0));
 			ventanaJuego.getpS().getColorA().setEnabled(true);
+			ventanaJuego.getpS().getColorA().setBackground(new Color(251,255,0));
 			ventanaJuego.getpS().getColorAz().setEnabled(true);
+			ventanaJuego.getpS().getColorAz().setBackground(new Color(0,135,255));
 
 		} else if (e.getActionCommand().equals("verde")) {
-
+			
 		} else if (e.getActionCommand().equals("rojo")) {
 
 		} else if (e.getActionCommand().equals("amarillo")) {

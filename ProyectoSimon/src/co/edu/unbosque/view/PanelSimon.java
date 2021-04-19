@@ -17,7 +17,7 @@ public class PanelSimon extends JPanel{
 	private JButton colorAz;
 	
 	public PanelSimon(){
-		setLayout(new GridLayout(2,2));
+		setLayout(new GridLayout(2,2,5,5));
 		setBackground(new Color(108,102,97));
 		setBorder(new TitledBorder("SIMON"));
 		setVisible(true);
@@ -25,41 +25,27 @@ public class PanelSimon extends JPanel{
 		inicializarComponentes();
 	}
 	
-	public void inicializarComponentes() {
-		Icon imgVA,imgRA,imgAA,imgAzA,imgVE,imgRE,imgAE,imgAzE;
-		imgVA = new ImageIcon(getClass().getResource("/imagen/verdeApagado.jpg"));	
-		imgRA = new ImageIcon(getClass().getResource("/imagen/rojoApagado.jpg"));
-		imgAA = new ImageIcon(getClass().getResource("/imagen/amarilloApagado.jpg"));	
-		imgAzA = new ImageIcon(getClass().getResource("/imagen/azulApagado.jpg"));
-		imgVE = new ImageIcon(getClass().getResource("/imagen/verdeEncendido.jpg"));
-		imgRE = new ImageIcon(getClass().getResource("/imagen/rojoEncendido.jpg"));
-		imgAE = new ImageIcon(getClass().getResource("/imagen/amarilloEncendido.jpg"));
-		imgAzE = new ImageIcon(getClass().getResource("/imagen/azulEncendido.jpg"));
-		
-		colorV = new JButton();
-		colorV.setIcon(imgVE);
-		colorV.setDisabledIcon(imgVA);
+	public void inicializarComponentes() {		
+		colorV = new JButton("1");
+		colorV.setBackground(new Color(38,152,22));
 		colorV.setEnabled(false);
 		colorV.setActionCommand("verde");
 		add(colorV);
 		
-		colorR = new JButton();
-		colorR.setIcon(imgRE);
-		colorR.setDisabledIcon(imgRA);
+		colorR = new JButton("2");
+		colorR.setBackground(new Color(197,12,12));
 		colorR.setEnabled(false);
 		colorR.setActionCommand("rojo");
 		add(colorR);
 		
-		colorA = new JButton();
-		colorA.setIcon(imgAE);
-		colorA.setDisabledIcon(imgAA);
+		colorA = new JButton("3");
+		colorA.setBackground(new Color(197,197,12));
 		colorA.setEnabled(false);
 		colorA.setActionCommand("amarillo");
 		add(colorA);
 		
-		colorAz = new JButton();
-		colorAz.setIcon(imgAzE);
-		colorAz.setDisabledIcon(imgAzA);
+		colorAz = new JButton("4");
+		colorAz.setBackground(new Color(16,91,158));
 		colorAz.setEnabled(false);
 		colorAz.setActionCommand("azul");
 		add(colorAz);
