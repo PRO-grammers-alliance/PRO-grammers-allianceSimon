@@ -35,6 +35,7 @@ public class VentanaJuego extends JFrame{
 		pS = new PanelSimon();
 		getContentPane().add(pS, BorderLayout.CENTER);
 		
+		
 	}
 
 	public PanelComprobar getpC() {
@@ -60,5 +61,6 @@ public class VentanaJuego extends JFrame{
 	public void setpS(PanelSimon pS) {
 		this.pS = pS;
 	}
+
 
 }

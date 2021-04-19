@@ -17,7 +17,7 @@ public class PanelDeImagen extends JPanel {
 	
 	public void paint (Graphics g) {
 		Dimension tam = getSize();
-		ImageIcon im = new ImageIcon(getClass().getResource("/imagen/simon.jpg"));
+		ImageIcon im = new ImageIcon(getClass().getResource("/imagen/bv.jpg"));
 		g.drawImage(im.getImage(), 0, 0, tam.width, tam.height, null);
 		setOpaque(false);
 		super.paint(g);

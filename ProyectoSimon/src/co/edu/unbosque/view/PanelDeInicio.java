@@ -10,12 +10,14 @@ public class PanelDeInicio extends JPanel{
 	private JButton btingreso;
 	
 	public PanelDeInicio() {
-		setLayout(new GridLayout(1,1,5,5));
+		setLayout(null);
+		setVisible(true);
 		InicializarComponentes();
 	}
 	
 	public void InicializarComponentes() {
 		btingreso = new JButton("JUGAR SIMON");
+		btingreso.setBounds(200, 300, 200, 30);
 		btingreso.setActionCommand("jugar");
 		add(btingreso);
 	}
