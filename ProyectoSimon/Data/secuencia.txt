@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-1243
-=======
-3241
->>>>>>> branch 'master' of https://github.com/PRO-grammers-alliance/Simon1.git
+2314
