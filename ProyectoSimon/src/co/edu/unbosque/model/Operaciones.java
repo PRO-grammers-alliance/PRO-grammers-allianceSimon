@@ -3,14 +3,13 @@ package co.edu.unbosque.model;
 import co.edu.unbosque.model.persistence.ArchivoTxt;
 import co.edu.unbosque.model.persistence.Propiedades;
 
-public class Operaciones{
+public class Operaciones extends Secuencia{
 	
 	//Método que retorna un String de los números generados que se guardaron en el arreglo en la clase Secuencia y luego en el txt
 	public String crearSecuencia() {
 		ArchivoTxt arch = new ArchivoTxt();
-		Secuencia sec = new Secuencia();
-		sec.generarNumeros();
-		String secuencia = sec.devolverArreglo();
+		generarNumeros();
+		String secuencia = devolverArreglo();
 		arch.escribirArchivo(secuencia);
 		return secuencia;
 	}

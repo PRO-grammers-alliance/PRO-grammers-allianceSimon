@@ -2,7 +2,7 @@ package co.edu.unbosque.model;
 
 import co.edu.unbosque.model.persistence.Propiedades;
 
-public class Secuencia {
+public abstract class Secuencia {
 
 	private String secuencia[];
 	private Propiedades prop;
