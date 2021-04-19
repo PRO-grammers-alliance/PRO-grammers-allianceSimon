@@ -44,46 +44,38 @@ public class Controller implements ActionListener {
 			for (int i = 0; i < Integer.parseInt(op.verPropiedades("secuencia")); i++) {
 				if (i==0) {
 					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					
+					
 					System.out.println(op.verSecuencia(i));
-					ventanaJuego.getpN().getNum1().setText("");
+					
 				} else if (i==1) {
 					ventanaJuego.getpN().getNum2().setText(""+op.verSecuencia(i));
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					
 					System.out.println(op.verSecuencia(i));
-					ventanaJuego.getpN().getNum2().setText("");
+					
 				} else if (i==2) {
 					ventanaJuego.getpN().getNum3().setText(""+op.verSecuencia(i));
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
 					System.out.println(op.verSecuencia(i));
-					ventanaJuego.getpN().getNum3().setText("");
+					
 				} else if (i==3) {
 					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					
 					System.out.println(op.verSecuencia(i));
-					ventanaJuego.getpN().getNum4().setText("");
+					
 				}
-			}			
+			}
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}finally {
+				ventanaJuego.getpN().getNum1().setText("");
+				ventanaJuego.getpN().getNum2().setText("");
+				ventanaJuego.getpN().getNum3().setText("");
+				ventanaJuego.getpN().getNum4().setText("");
+			}
+			
 			// Activa los botones para seguir la secuencia
 			ventanaJuego.getpS().getColorV().setEnabled(true);
 			ventanaJuego.getpS().getColorV().setBackground(new Color(59,230,0));
