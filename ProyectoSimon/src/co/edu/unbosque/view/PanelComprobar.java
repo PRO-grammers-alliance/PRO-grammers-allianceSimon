@@ -27,6 +27,7 @@ public class PanelComprobar extends JPanel{
 		
 		btComprobar = new JButton("TERMINAR");
 		btComprobar.setActionCommand("terminar");
+		btComprobar.setEnabled(false);
 		add(btComprobar);
 	}
 

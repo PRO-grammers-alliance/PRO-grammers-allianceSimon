@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -16,16 +14,8 @@ public class PanelSimon extends JPanel{
 	private JButton colorR;
 	private JButton colorA;
 	private JButton colorAz;
-	private ImageIcon uno1;
-	private ImageIcon dos2;
-	private ImageIcon tres3;
-	private ImageIcon cuatro4;
 	
 	public PanelSimon(){
-		uno1 = new ImageIcon(getClass().getResource("/imagen/verdeEncendido1.jpg"));
-		dos2 = new ImageIcon(getClass().getResource("/imagen/rojoEncendido2.jpg"));
-		tres3 = new ImageIcon(getClass().getResource("/imagen/amarilloEncendido3.jpg"));
-		cuatro4 = new ImageIcon(getClass().getResource("/imagen/azulEncendido4.jpg"));
 		setLayout(new GridLayout(2,2,5,5));
 		setBackground(new Color(108,102,97));
 		setBorder(new TitledBorder("SIMON"));
@@ -96,38 +86,6 @@ public class PanelSimon extends JPanel{
 
 	public void setColorAz(JButton colorAz) {
 		this.colorAz = colorAz;
-	}
-
-	public ImageIcon getUno1() {
-		return uno1;
-	}
-
-	public void setUno1(ImageIcon uno1) {
-		this.uno1 = uno1;
-	}
-
-	public ImageIcon getDos2() {
-		return dos2;
-	}
-
-	public void setDos2(ImageIcon dos2) {
-		this.dos2 = dos2;
-	}
-
-	public ImageIcon getTres3() {
-		return tres3;
-	}
-
-	public void setTres3(ImageIcon tres3) {
-		this.tres3 = tres3;
-	}
-
-	public ImageIcon getCuatro4() {
-		return cuatro4;
-	}
-
-	public void setCuatro4(ImageIcon cuatro4) {
-		this.cuatro4 = cuatro4;
 	}
 	
 }
