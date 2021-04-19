@@ -5,12 +5,10 @@ import java.io.*;
 import co.edu.unbosque.model.Secuencia;
 
 
-public class ArchivoTxt {
+public class ArchivoTxt extends Secuencia {
 
 	private String archivodata = ".\\Data\\secuencia.txt";
-	private Secuencia s;
 	public ArchivoTxt() {
-		s = new Secuencia();
 	}
 	
 	public int escribirArchivo(String dato) {
@@ -39,7 +37,7 @@ public class ArchivoTxt {
 			FileReader fr = new FileReader(f); //fr-> crea el flujo desde f
 			BufferedReader br = new BufferedReader(fr); //
 			linea = br.readLine(); // linea toma el valor de la primera linea
-			for(int i = 0;i<s.getSecuencia().length;i++) { // mientras haya datos por leer en el archivo	
+			for(int i = 0;i<getSecuencia().length;i++) { // mientras haya datos por leer en el archivo	
 				cadena += linea+"";	// acumular en cadena lo leido en linea
 				linea = br.readLine(); // lee el valor de la siguente linea
 			}
@@ -59,11 +57,4 @@ public class ArchivoTxt {
 		this.archivodata = archivodata;
 	}
 
-	public Secuencia getS() {
-		return s;
-	}
-
-	public void setS(Secuencia s) {
-		this.s = s;
-	}
 }
