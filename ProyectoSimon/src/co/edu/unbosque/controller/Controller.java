@@ -3,8 +3,6 @@ package co.edu.unbosque.controller;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import co.edu.unbosque.model.Operaciones;
 import co.edu.unbosque.view.VentanaBienvenida;
@@ -53,7 +51,7 @@ public class Controller implements ActionListener {
 				} else if (i==3) {
 					ventanaJuego.getpN().getNum4().setText(""+op.verSecuencia(i));
 				}
-			}
+			}			
 			// Activa los botones para seguir la secuencia
 			ventanaJuego.getpS().getColorV().setEnabled(true);
 			ventanaJuego.getpS().getColorV().setBackground(new Color(59,230,0));
