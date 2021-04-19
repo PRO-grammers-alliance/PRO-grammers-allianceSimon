@@ -46,16 +46,18 @@ public class Controller implements ActionListener {
 		
 		if (e.getActionCommand().equals("jugar")) {
 			ventanaBienvenida.setVisible(false);
-			ventana_r.mostrarInfo("Bienvenido a SIMON \nEl juego consiste en repetir la secuencia de numeros\nque se le mostrara, cuando presione el boton de comenzar,\ntiene solo un intento si repilica correctamente la secuencia ganara.\nBuena suerte!!", "informativo");
+			ventana_r.mostrarInfo("Bienvenido a SIMON \nEl juego consiste en repetir la secuencia de números\nque se le mostrará, cuando presione el botón de comenzar \ntiene solo un intento, si replica correctamente la secuencia ganará.\nBuena suerte!!", "informativo");
 			ventanaJuego.setVisible(true);
 			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 		} else if (e.getActionCommand().equals("empezar")) {
 			// Crea la secuencia de numeros y la guarda en el txt
 			op.gestionarPropiedades();
 			op.crearSecuencia();
-			ventanaJuego.getpC().getBtEmpezar().setVisible(false);
+			ventanaJuego.getpC().getBtEmpezar().setEnabled(false);
+			ventanaJuego.getpC().getBtComprobar().setEnabled(true);
 			
 			numero_u = new String[Integer.parseInt(op.verPropiedades("secuencia"))];
+			
 			for (int i = 0; i < Integer.parseInt(op.verPropiedades("secuencia")); i++) {
 				if (i==0) {
 					ventanaJuego.getpN().getNum1().setText(""+op.verSecuencia(i));
@@ -83,18 +85,40 @@ public class Controller implements ActionListener {
 		} else if (e.getActionCommand().equals("verde")) {
 			numero_u[k]="1";
 			k++;
+			if(k==4) {
+				ventanaJuego.getpS().getColorV().setEnabled(false);
+				ventanaJuego.getpS().getColorR().setEnabled(false);
+				ventanaJuego.getpS().getColorA().setEnabled(false);
+				ventanaJuego.getpS().getColorAz().setEnabled(false);
+			}
 		} else if (e.getActionCommand().equals("rojo")) {
 			numero_u[k]="2";
-			System.out.println(k+"-k");
 			k++;
+			if(k==4) {
+				ventanaJuego.getpS().getColorV().setEnabled(false);
+				ventanaJuego.getpS().getColorR().setEnabled(false);
+				ventanaJuego.getpS().getColorA().setEnabled(false);
+				ventanaJuego.getpS().getColorAz().setEnabled(false);
+			}
 		} else if (e.getActionCommand().equals("amarillo")) {
 			numero_u[k]="3";
 			k++;
+			if(k==4) {
+				ventanaJuego.getpS().getColorV().setEnabled(false);
+				ventanaJuego.getpS().getColorR().setEnabled(false);
+				ventanaJuego.getpS().getColorA().setEnabled(false);
+				ventanaJuego.getpS().getColorAz().setEnabled(false);
+			}
 		} else if (e.getActionCommand().equals("azul")) {
 			numero_u[k]="4";
 			k++;
+			if(k==4) {
+				ventanaJuego.getpS().getColorV().setEnabled(false);
+				ventanaJuego.getpS().getColorR().setEnabled(false);
+				ventanaJuego.getpS().getColorA().setEnabled(false);
+				ventanaJuego.getpS().getColorAz().setEnabled(false);
+			}
 		}else if (e.getActionCommand().equals("terminar")) {
-			System.out.println("termine");
 			ventanaJuego.setVisible(false);
 			validarGanador();
 			k=0;
@@ -129,7 +153,6 @@ public class Controller implements ActionListener {
 		for(int i=0;i<op.getSecuencia().length;i++){
 			for(int j = 0; j<numero_u.length;j++) {
 				if(i==j) {
-					System.out.println(op.verSecuencia(i)+" - "+numero_u[j]+" = "+contador);
 					if(op.verSecuencia1(i).equals(numero_u[j])) {
 							contador++;
 					 }
