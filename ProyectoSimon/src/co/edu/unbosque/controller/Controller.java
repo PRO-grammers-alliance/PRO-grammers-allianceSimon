@@ -51,7 +51,6 @@ public class Controller implements ActionListener {
 			ventanaJuego.setTitle(op.verPropiedades("nombreJuego"));
 		} else if (e.getActionCommand().equals("empezar")) {
 			// Crea la secuencia de numeros y la guarda en el txt
-			op.gestionarPropiedades();
 			op.crearSecuencia();
 			ventanaJuego.getpC().getBtEmpezar().setEnabled(false);
 			ventanaJuego.getpC().getBtComprobar().setEnabled(true);
@@ -150,10 +149,10 @@ public class Controller implements ActionListener {
 	}
 	public void validarGanador() {
 		int contador = 0;
-		for(int i=0;i<op.getSecuencia().length;i++){
+		for(long i=0;i<op.getSecuencia().length;i++){
 			for(int j = 0; j<numero_u.length;j++) {
 				if(i==j) {
-					if(op.verSecuencia1(i).equals(numero_u[j])) {
+					if(op.verSecuencia(i).equals(numero_u[j])) {
 							contador++;
 					 }
 				}
