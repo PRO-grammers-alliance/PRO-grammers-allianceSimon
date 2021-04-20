@@ -16,5 +16,5 @@ public interface Operaciones  {
 	public abstract int verSecuencia(int posicion); 
 	
 	//metodo que davuelve el arreglo en String
-	public abstract String verSecuencia1(int posicion); 	
+	public abstract String verSecuencia(long posicion); 	
 }

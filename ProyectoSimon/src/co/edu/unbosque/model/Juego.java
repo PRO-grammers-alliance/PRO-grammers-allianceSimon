@@ -39,11 +39,11 @@ public class Juego extends Secuencia implements Operaciones {
 	}
 
 	@Override
-	public String verSecuencia1(int posicion) {
+	public String verSecuencia(long posicion) {
 		// TODO Auto-generated method stub
 		ArchivoTxt arch = new ArchivoTxt();
 		String secuencia= arch.leerArchivo();
-		String numero = String.valueOf(secuencia.charAt(posicion));
+		String numero = String.valueOf(secuencia.charAt((int) posicion));
 		return numero;
 	}
 

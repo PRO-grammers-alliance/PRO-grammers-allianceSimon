@@ -9,6 +9,10 @@ public class Propiedades {
 	private Properties prop = new Properties();
 	private String archivoprop = ".\\Data\\archivo.properties";
 	
+	public Propiedades() {
+		escribirPropiedades();
+	}
+	
 	public int escribirPropiedades() {
 		try {
 			prop.setProperty("nombreJuego", "Simon");
