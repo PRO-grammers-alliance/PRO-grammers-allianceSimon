@@ -130,7 +130,8 @@ public class Controller implements ActionListener {
 			ventanaJuego.getpS().getColorA().setBackground(new Color(197,197,12));
 			ventanaJuego.getpS().getColorAz().setEnabled(false);
 			ventanaJuego.getpS().getColorAz().setBackground(new Color(16,91,158));
-			ventanaJuego.getpC().getBtEmpezar().setVisible(true);
+			ventanaJuego.getpC().getBtEmpezar().setEnabled(true);
+			ventanaJuego.getpC().getBtComprobar().setEnabled(false);
 
 		}
 	}
